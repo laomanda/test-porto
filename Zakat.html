@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZakatKu - Platform Zakat Modern</title>
+    <link rel="stylesheet" href="./Zakat.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">✨</span>ZakatKu
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">Tentang Zakat</a></li>
+            <li><a href="#calculator">Kalkulator</a></li>
+            <li><a href="#donation">Donasi</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <button class="cta-button">Mulai Zakat</button>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div id="canvas-container"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Berzakatlah Dengan Mudah di Era Digital</h1>
+            <p class="hero-text">ZakatKu hadir untuk memudahkan kamu menunaikan zakat dengan cepat, aman, dan transparan. Dapatkan laporan penggunaan zakat secara real-time.</p>
+            <div class="hero-buttons">
+                <button class="hero-cta">Bayar Zakat Sekarang</button>
+                <button class="hero-secondary">Hitung Zakat</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">Tentang Zakat</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Apa itu Zakat?</h3>
+                <p class="card-text">Zakat adalah kewajiban finansial dalam agama Islam yang mengharuskan individu untuk menyumbangkan sebagian dari kekayaan mereka kepada orang yang membutuhkan, sebagai bentuk ibadah dan penyucian diri.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚖️</div>
+                <h3 class="card-title">Siapa yang Menerima?</h3>
+                <p class="card-text">Zakat diberikan kepada delapan asnaf (golongan) yang berhak menerimanya, seperti fakir, miskin, amil zakat, mualaf, riqab, gharimin, fi sabilillah, dan ibnu sabil.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌟</div>
+                <h3 class="card-title">Manfaat Zakat</h3>
+                <p class="card-text">Zakat membantu menciptakan keseimbangan ekonomi, mengurangi kemiskinan, membangun kebersamaan sosial, dan mewujudkan keadilan dalam masyarakat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donation" id="donation">
+        <h2 class="section-title">Bayar Zakat</h2>
+        <div class="donation-container">
+            <div class="donation-form">
+                <div class="form-group">
+                    <label class="form-label">Jenis Zakat</label>
+                    <select class="form-input">
+                        <option value="maal">Zakat Maal</option>
+                        <option value="fitrah">Zakat Fitrah</option>
+                        <option value="penghasilan">Zakat Penghasilan</option>
+                        <option value="perdagangan">Zakat Perdagangan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nominal</label>
+                    <input type="number" class="form-input" placeholder="Rp 0">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-input" placeholder="Masukkan nama lengkap">
+                </div>
+                <div class="form-group">
+                    <label class="form-la   bel">Email</label>
+                    <input type="email" class="form-input" placeholder="Masukkan email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">No. Handphone</label>
+                    <input type="tel" class="form-input" placeholder="Masukkan nomor handphone">
+                </div>
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Metode Pembayaran</h3>
+                <div class="payment-methods">
+                    <div class="payment-method" onclick="window.location.href='https://gopay.co.id'">
+                        <div class="payment-icon">💳</div>
+                        <div class="payment-name">GoPay</div>
+                    </div>
+                    <div class="payment-method" onclick="window.location.href='https://dana.id'">
+                        <div class="payment-icon">💳</div>
+                        <div class="payment-name">DANA</div>
+                    </div>
+                    <div class="payment-method">
+                        <div class="payment-icon">🏦</div>
+                        <div class="payment-name">Transfer Bank</div>
+                    </div>
+                </div>
+                <button class="cta-button" style="width: 100%; margin-top: 2rem;">Bayar Sekarang</button>
+            </div>
+            <div class="donation-info">
+                <h3 style="margin-bottom: 1rem; color: #087f5b;">Transparansi Donasi</h3>
+                <p style="line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
+                    Kami berkomitmen untuk menjaga transparansi dan akuntabilitas dalam pengelolaan dana zakat. Setiap donasi yang diterima akan dilaporkan secara berkala dan dapat diakses oleh semua donatur.
+                </p>
+                <h3 style="margin-bottom: 1rem; color: #087f5b;">Penyaluran Dana</h3>
+                <p style="line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
+                    Dana zakat yang terkumpul akan disalurkan kepada mereka yang berhak menerimanya (mustahik) sesuai dengan ketentuan syariah. Program penyaluran meliputi bantuan kemanusiaan, pendidikan, kesehatan, dan pemberdayaan ekonomi.
+                </p>
+                <h3 style="margin-bottom: 1rem; color: #087f5b;">Laporan Distribusi</h3>
+                <p style="line-height: 1.6; color: #555;">
+                    Setiap bulan, kami akan mengirimkan laporan distribusi zakat ke email Anda. Laporan ini berisi informasi mengenai jumlah dana yang telah disalurkan dan program-program yang telah dilaksanakan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">ZakatKu</div>
+                <p class="footer-text">
+                    Platform zakat digital untuk memudahkan umat muslim menunaikan kewajiban zakatnya dengan aman, mudah, dan transparan.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">📘</a>
+                    <a href="#" class="social-icon">📸</a>
+                    <a href="#" class="social-icon">🐦</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Tautan Cepat</h3>
+                <ul>
+                    <li><a href="#about">Tentang Zakat</a></li>
+                    <li><a href="#calculator">Kalkulator Zakat</a></li>
+                    <li><a href="#donation">Donasi</a></li>
+                    <li><a href="#contact">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Layanan</h3>
+                <ul>
+                    <li><a href="#">Zakat Maal</a></li>
+                    <li><a href="#">Zakat Fitrah</a></li>
+                    <li><a href="#">Zakat Penghasilan</a></li>
+                    <li><a href="#">Zakat Perdagangan</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Kontak</h3>
+                <ul>
+                    <li><a href="#">info@zakatku.id</a></li>
+                    <li><a href="#">+62 812 3456 7890</a></li>
+                    <li><a href="#">Jl. Zakat No. 123, Jakarta</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 ZakatKu. Hak Cipta Dilindungi.
+        </div>
+    </footer>
+
+    <script src="./Zakat.js"></script>
+</body>
+</html>
